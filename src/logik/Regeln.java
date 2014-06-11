@@ -1,6 +1,6 @@
 package logik;
 
-public class Regeln {
+public class Regeln implements SpielInfo{
 
 
     public  Regeln(){
@@ -11,6 +11,21 @@ public class Regeln {
 
 
         }
+
+    @Override
+    public Spieler getSpielerEins() {
+        return null;
+    }
+
+    @Override
+    public Spieler getSpielerZwei() {
+        return null;
+    }
+
+    @Override
+    public boolean istSpielerEinsDran() {
+        return false;
+    }
 
     public void tuerEintreten(){
 
