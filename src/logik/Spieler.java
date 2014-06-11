@@ -12,6 +12,9 @@ public class Spieler {
 
 
     public ArrayList<Karte> getHand() {
+
+
+
         return hand;
     }
 
