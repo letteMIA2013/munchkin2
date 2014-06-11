@@ -2,9 +2,7 @@ package logik;
 
 import java.util.ArrayList;
 
-/**
- * Created by e3_dittmer on 11.06.14.
- */
+
 public class Spieler {
 
     private int staerke, level;
