@@ -76,7 +76,7 @@ public class Charakterblatt extends JPanel {
         SpielInfo spielInfo = oberflaeche.getSpielInfo();
         return spielInfo.istSpielerEinsDran()? spielInfo.getSpielerEins(): spielInfo.getSpielerZwei();
     }
-
+        //TODO auf dem Feld sind 10 Felder, wir wollten nur 5 große.
     private void erstelleFuenfInventarFelder() {
         for(int i=0; i < 5; i++){
             InventarFeld feld = new InventarFeld();

@@ -14,11 +14,7 @@ public class Spieler {
     public Spieler(String name) {
         this.name = name;
 
-        staerke = 1;
-        level = 1;
-    }
-
-    public ArrayList<Karte> getHand(){
+    public ArrayList<Karte> getHand() {
         return hand;
     }
 
