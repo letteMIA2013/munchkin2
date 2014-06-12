@@ -1,8 +1,5 @@
 package logik;
 
-import javax.swing.*;
-import java.util.ArrayList;
-
 
 public interface SpielInfo {
 

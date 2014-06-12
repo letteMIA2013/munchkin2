@@ -1,6 +1,6 @@
 package logik;
 
-import java.util.ArrayList;
+        import java.util.ArrayList;
 
 /**
  * Created by e3_dittmer on 11.06.14.
@@ -11,11 +11,22 @@ public class Spieler {
     private  String name;
     ArrayList<Karte> inventar, hand;
 
-    public ArrayList<Karte> getInventar() {
-        return inventar;
+    public Spieler() {
+
+        hand = new ArrayList<Karte>();
+        inventar = new ArrayList<Karte>();
     }
 
+    public void gibKarte(Karte k){
+        hand.add(k);
+    }
+
+
+
     public ArrayList<Karte> getHand() {
+
+
+
         return hand;
     }
 
