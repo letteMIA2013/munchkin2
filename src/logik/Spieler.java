@@ -11,15 +11,16 @@ public class Spieler {
     private  String name;
     ArrayList<Karte> inventar, hand;
 
-    public Spieler(String name) {
-        this.name = name;
+    public ArrayList<Karte> getInventar() {
+        return inventar;
+    }
 
     public ArrayList<Karte> getHand() {
         return hand;
     }
 
-    public ArrayList<Karte> getInventar() {
-        return null;
+    public Spieler(String name) {
+        this.name = name;
     }
 
     public int getStaerke() {
