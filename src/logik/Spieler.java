@@ -8,19 +8,30 @@ import java.util.ArrayList;
 public class Spieler {
 
     private int staerke, level;
+    private  String name;
     ArrayList<Karte> inventar, hand;
 
+    public Spieler(String name) {
+        this.name = name;
 
-    public ArrayList<Karte> getHand() {
+        staerke = 1;
+        level = 1;
+    }
+
+    public ArrayList<Karte> getHand(){
         return hand;
     }
 
-    public ArrayList<Karte> getInventar(){
+    public ArrayList<Karte> getInventar() {
         return null;
     }
 
     public int getStaerke() {
         return staerke;
+    }
+
+    public String getName() {
+        return name;
     }
 
     public int getLevel() {

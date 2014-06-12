@@ -15,6 +15,10 @@ public interface SpielInfo {
 
     public boolean istSpielerEinsDran();
 
+    public Kartenstapel getKartenstapel();
+
+    public void wechselAktuellenSpieler();
+
 
 
 

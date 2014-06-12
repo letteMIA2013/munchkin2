@@ -66,7 +66,16 @@ public class Regeln implements SpielInfo{
 
     }
 
+    @Override
+    public Kartenstapel getKartenstapel() {
+        return null;
+        //TODO!!!
+    }
 
+    @Override
+    public void wechselAktuellenSpieler() {
+    // TODO!!!
+    }
 }
 
 

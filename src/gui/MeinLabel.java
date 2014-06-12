@@ -3,7 +3,7 @@ import java.awt.*;
 public class MeinLabel extends JLabel{
 
     public MeinLabel(){
-        setBackground (Color.BLACK);
+        setBackground (Color.YELLOW);
         setOpaque(true);
 
         setForeground(Color.BLACK);

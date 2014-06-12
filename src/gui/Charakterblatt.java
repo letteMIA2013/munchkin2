@@ -1,4 +1,9 @@
-package gui;import javax.swing.*;
+package gui;
+
+import logik.SpielInfo;
+import logik.Spieler;
+
+import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -10,8 +15,11 @@ public class Charakterblatt extends JPanel {
 
 
     private final ArrayList<InventarFeld> inventarFelder;
+    private final Oberflaeche oberflaeche;
 
     public Charakterblatt(final Oberflaeche oberflaeche) {
+
+        this.oberflaeche = oberflaeche;
 
         inventarFelder = new ArrayList<InventarFeld>();
 
@@ -20,25 +28,53 @@ public class Charakterblatt extends JPanel {
         erstelleFuenfInventarFelder();
 
         add(new JLabel());
-        add(new JLabel("Stärke: "));
-        add(new JLabel("Lvl: "));
+        add(new MeinLabel(){
+            @Override
+            public String getText() {
+                return "Stärke: " + getAktuellerSpieler().getStaerke();
+            }
+        });
+        add(new MeinLabel(){
+            @Override
+            public String getText() {
+                return "Lvl: " + getAktuellerSpieler().getLevel();
+            }
+        });
 
         erstelleFuenfInventarFelder();
 
         add(new JLabel());
-        add(new JButton("Ende"));
+        JButton endeButton =new JButton("Ende des Zuges");
+        ActionListener listener1 = new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                oberflaeche.getSpielInfo().wechselAktuellenSpieler();
+                oberflaeche.repaint();
+                oberflaeche.setTitle(oberflaeche.getTitle());
+            }
+        };
+        endeButton.addActionListener(listener1);
+        add(endeButton);
+
+        JButton menueButton = new JButton("Menü");
         ActionListener listener = new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 oberflaeche.setVisible(false);
-                Startseite startseite = new Startseite(111);
+                Startseite startseite = new Startseite(null, null);
             }
         };
-        JButton pauseButton = new JButton("Pause");
-        add(pauseButton);
-        pauseButton.addActionListener(listener);
+        add(menueButton);
+        menueButton.addActionListener(listener);
 
 
+    }
+
+
+
+    private Spieler getAktuellerSpieler(){
+        SpielInfo spielInfo = oberflaeche.getSpielInfo();
+        return spielInfo.istSpielerEinsDran()? spielInfo.getSpielerEins(): spielInfo.getSpielerZwei();
     }
 
     private void erstelleFuenfInventarFelder() {
@@ -59,4 +95,5 @@ public class Charakterblatt extends JPanel {
             setPreferredSize(new Dimension(30, 100));
         }
     }
+
 }
