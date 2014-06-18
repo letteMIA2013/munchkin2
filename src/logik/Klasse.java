@@ -24,5 +24,9 @@ public class Klasse {
 
     }
 
+    public boolean istDieb(){
+        return true;
+    }
+
 
 }

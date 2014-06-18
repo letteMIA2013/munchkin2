@@ -19,7 +19,8 @@ public class Kartenstapel {
         for (int i = 1; i <= ANZAHL_KARTEN; i++) {
 
 
-            Karte karte = new Karte(i, i < 20 ? Art.MONSTER : Art.SCHATZ);
+            Art typDerKarte = i < 20 ? Art.MONSTER : Art.SCHATZ;
+            Karte karte = new Karte(i, typDerKarte, typDerKarte.getZufaelligesBild());
             stapel.add(karte);
 
 
