@@ -3,14 +3,42 @@ package logik;
 public class Regeln implements SpielInfo{
 
 
+
+
+    public Kartenstapel kartenstapel;
+    public Spieler spieler1;
+    public Spieler spieler2;
+    public Karte karte;
+
+
     public  Regeln(){
 
 
+        new Klasse();
 
-            new Klasse();
+            // kartenstapel erstellen
+        Kartenstapel kartenstapel = new Kartenstapel();
+
+        // beide spieler erstellen
+
+        Spieler spieler1 = new Spieler();
+        Spieler spieler2 = new Spieler();
+
+        // karten ziehen und an spieler verteilen (hand)
+
+            for(int i = 0; i < 5; i++){
+
+
+
+                karte = kartenstapel.getObersteKarte();
+                spieler1.gibKarte(karte);
+
+            }
 
 
         }
+
+
 
     @Override
     public Spieler getSpielerEins() {
@@ -66,7 +94,16 @@ public class Regeln implements SpielInfo{
 
     }
 
+    @Override
+    public Kartenstapel getKartenstapel() {
+        return null;
+        //TODO!!!
+    }
 
+    @Override
+    public void wechselAktuellenSpieler() {
+    // TODO!!!
+    }
 }
 
 

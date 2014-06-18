@@ -7,6 +7,11 @@ import java.awt.*;
 public class Hand extends JPanel {
 
 
+
+
+
+
+
     public Hand(){
         //JFrame Spielflaeche = new JFrame();
         JPanel  Hand1 = new JPanel(new BorderLayout());
@@ -47,7 +52,7 @@ public class Hand extends JPanel {
         public void spielerEins(){
 
 
-          // Hand1.setVisible(true);
+          //Hand1.setVisible(true);
 
 
 

@@ -6,13 +6,13 @@ import java.awt.event.ActionListener;
 
 public class Startseite extends JFrame {
     private int Geheimcode;
-    public Startseite(int pin) {
+    public Startseite(/*int pin*/final String spielerName1, final String spielerName2) {
         setSize(300,300);
 
-        if (pin != 111){
-            JOptionPane.showMessageDialog(null,"Falsches Passwort!");
-            return;
-        }
+        //if (pin != 111){
+        //    JOptionPane.showMessageDialog(null,"Falsches Passwort!");
+        //    return;
+        //}
 
         //Bild bild = new Bild();
         //ImageIcon icon = bild.createImageIcon("Startseite.jpg");
@@ -31,7 +31,7 @@ public class Startseite extends JFrame {
         ActionListener listener = new ActionListener(){
             public void actionPerformed(ActionEvent huhu){
                 setVisible(false);
-                Oberflaeche oberflaeche = new Oberflaeche();
+                Oberflaeche oberflaeche = new Oberflaeche(new DummySpielInfo(spielerName1, spielerName2));
 
             }
         };
@@ -63,7 +63,7 @@ public class Startseite extends JFrame {
         setIconImage(icon1.getImage());
         setIcon(icon1);
 
-        Geheimcode = pin;
+        //Geheimcode = pin;
 
         //add(panel,BorderLayout.CENTER);
         add(panel);
