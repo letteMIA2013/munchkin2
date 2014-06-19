@@ -20,7 +20,7 @@ public class Kartenstapel {
 
 
             Art typDerKarte = i < 20 ? Art.MONSTER : Art.SCHATZ;
-            Karte karte = new Karte(i, typDerKarte, typDerKarte.getZufaelligesBild());
+            Karte karte = new Karte(i, typDerKarte);
             stapel.add(karte);
 
 

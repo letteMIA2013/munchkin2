@@ -9,29 +9,32 @@ public class Karte extends JPanel {
 
     public int wert;
     public Art art;
-    public ImageIcon bild;
 
 
     public Art getArt() {
         return art;
     }
 
-    public Karte( int w, Art a, ImageIcon bild){
+    public int getWert() {
+        return wert;
+    }
+
+
+
+    public Karte( int w, Art a){
 
         //TODO: getter methoden hierfür:
         this.wert = w;
-
         this.art = a;
-        this.bild = bild;
 
 
 //        setLayout(new BorderLayout());
-        JLabel namenLabel = new JLabel("Namen:" );
-        add(namenLabel, BorderLayout.NORTH);
+        JLabel bilderNamenLabel = new JLabel(a.getZufaelligerName() );
+        add(bilderNamenLabel, BorderLayout.NORTH);
         //TODO: jlabel fürs bild erzeugen und in die mitte hinzufügen
 
-        JLabel bilderNamenLabel = new JLabel();
-        add(bilderNamenLabel, BorderLayout.CENTER);
+        JLabel bildLabel = new JLabel(a.getZufaelligesBild());
+        add(bildLabel, BorderLayout.CENTER);
         //TODO: jlabel für namen erzeugen und oben hinzufügen
 
         JLabel staerkeLabel = new JLabel("Stärke: " + w);
@@ -39,14 +42,7 @@ public class Karte extends JPanel {
 
 
 
-
-
-
-
-
-
     }
-
 
 
 
