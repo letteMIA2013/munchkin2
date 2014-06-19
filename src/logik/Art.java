@@ -10,10 +10,10 @@ public enum Art {
 
 
 
-    MONSTER("monster", new String[]{"Bekiffter-Golem", "Freundschaftstrank", "Käpt-Blubber", "Netz-Troll", "Schlafender-Troll",
-    "Werschildkroete","Zwerg", "Halbling"}),
+    MONSTER("monster", new String[]{"Bekiffter-Golem-", "Freundschaftstrank-", "Käpt-Blubber-", "Netz-Troll-", "Schlafender-Troll-",
+    "Werschildkroete-","Zwerg-", "Halbling-"}),
 
-    SCHATZ ("schatz", new String[]{"Abschlachtendes-Schwert","Helm_der_Peripherensicht","Stahlrüstung", "Lederrüstung", "Stiefel","Schleimige_Rüstung"});
+    SCHATZ ("schatz", new String[]{"Abschlachtendes-Schwert-","Helm_der_Peripherensicht-","Stahlrüstung-", "Lederrüstung-", "Stiefel-","Schleimige_Rüstung-"});
 
     private final String[] bilderNamen;
     private final String verzeichnis;

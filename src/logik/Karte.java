@@ -23,7 +23,6 @@ public class Karte extends JPanel {
 
     public Karte( int w, Art a){
 
-        //TODO: getter methoden hierfür:
         this.wert = w;
         this.art = a;
 
@@ -31,11 +30,10 @@ public class Karte extends JPanel {
 //        setLayout(new BorderLayout());
         JLabel bilderNamenLabel = new JLabel(a.getZufaelligerName() );
         add(bilderNamenLabel, BorderLayout.NORTH);
-        //TODO: jlabel fürs bild erzeugen und in die mitte hinzufügen
+
 
         JLabel bildLabel = new JLabel(a.getZufaelligesBild());
         add(bildLabel, BorderLayout.CENTER);
-        //TODO: jlabel für namen erzeugen und oben hinzufügen
 
         JLabel staerkeLabel = new JLabel("Stärke: " + w);
         add(staerkeLabel, BorderLayout.SOUTH);

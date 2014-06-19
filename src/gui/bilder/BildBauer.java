@@ -13,7 +13,7 @@ public class BildBauer {
             return new ImageIcon(imgURL, "");
         }
         else {
-            JOptionPane.showMessageDialog(null,"Konnte URL nicht finden");
+            JOptionPane.showMessageDialog(null,"Konnte URL nicht finden für " + pfad);
             return null;
         }
     }
