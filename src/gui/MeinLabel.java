@@ -3,11 +3,11 @@ import java.awt.*;
 public class MeinLabel extends JLabel{
 
     public MeinLabel(){
-        setBackground (Color.YELLOW);
+        setBackground (new Color(222,184,135));
         setOpaque(true);
 
-        setForeground(Color.BLACK);
-        setBorder(BorderFactory.createLineBorder(Color.BLACK,1));
+        setForeground(new Color(139,69,19));
+        setBorder(BorderFactory.createLineBorder(new Color(139,69,19),2));
         setHorizontalAlignment(JLabel.CENTER);
 
     }

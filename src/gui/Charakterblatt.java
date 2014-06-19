@@ -1,5 +1,6 @@
 package gui;
 
+import logik.Karte;
 import logik.SpielInfo;
 import logik.Spieler;
 
@@ -25,7 +26,7 @@ public class Charakterblatt extends JPanel {
 
         setLayout(new GridLayout(2, 8, 3, 3));
 
-        erstelleFuenfInventarFelder();
+        erstelleFuenfInventarFelder(0);
 
         add(new JLabel());
         add(new MeinLabel(){
@@ -41,10 +42,14 @@ public class Charakterblatt extends JPanel {
             }
         });
 
-        erstelleFuenfInventarFelder();
+        erstelleFuenfInventarFelder(5);
 
         add(new JLabel());
         JButton endeButton =new JButton("Ende des Zuges");
+        endeButton.setForeground(new Color(139, 69, 19));
+        endeButton.setBackground(new Color(222, 184, 135));
+        endeButton.setOpaque(true);
+        endeButton.setBorder(BorderFactory.createLineBorder(new Color(139, 69, 19), 2));
         ActionListener listener1 = new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -57,6 +62,10 @@ public class Charakterblatt extends JPanel {
         add(endeButton);
 
         JButton menueButton = new JButton("Menü");
+        menueButton.setForeground(new Color(139,69,19));
+        menueButton.setBackground(new Color(222, 184, 135));
+        menueButton.setOpaque(true);
+        menueButton.setBorder(BorderFactory.createLineBorder(new Color(139, 69, 19), 2));
         ActionListener listener = new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -67,6 +76,7 @@ public class Charakterblatt extends JPanel {
         add(menueButton);
         menueButton.addActionListener(listener);
 
+        setBackground(new Color(222,200,145));
 
     }
 
@@ -77,22 +87,53 @@ public class Charakterblatt extends JPanel {
         return spielInfo.istSpielerEinsDran()? spielInfo.getSpielerEins(): spielInfo.getSpielerZwei();
     }
         //TODO auf dem Feld sind 10 Felder, wir wollten nur 5 große.
-    private void erstelleFuenfInventarFelder() {
+
+    private void erstelleFuenfInventarFelder(int startIndex) {
         for(int i=0; i < 5; i++){
-            InventarFeld feld = new InventarFeld();
+            InventarFeld feld = new InventarFeld(startIndex);
             add(feld);
             inventarFelder.add(feld);
+            startIndex++;
         }
     }
 
 
-    private class InventarFeld extends JLabel{
+    private class InventarFeld extends JPanel{
 
-        private InventarFeld() {
-            setBackground(Color.GREEN);
-            setOpaque(true);
-            setBorder(BorderFactory.createLineBorder(Color.BLACK));
-            setPreferredSize(new Dimension(30, 100));
+        private final JLabel leeresFeld;
+        private final int index;
+        private final JLabel vollesFeld;
+
+        private InventarFeld(int index) {
+
+            this.index = index;
+
+            leeresFeld = new JLabel("" + index);
+            leeresFeld.setBackground(new Color(222, 184, 135));
+            leeresFeld.setOpaque(true);
+            leeresFeld.setBorder(BorderFactory.createLineBorder(new Color(139, 69, 19), 2));
+            leeresFeld.setPreferredSize(new Dimension(100, 100));
+
+            vollesFeld = new JLabel();
+
+
+        }
+
+        @Override
+        public void paint(Graphics g) {
+            ArrayList<Karte> inventar = getAktuellerSpieler().getInventar();
+            removeAll();
+
+            if (inventar == null || inventar.size() <= index){
+                add(leeresFeld);
+            }
+            else{
+                Karte karte = inventar.get(index);
+                vollesFeld.setIcon(karte.getBild());
+                add(vollesFeld);
+
+            }
+            super.paint(g);
         }
     }
 

@@ -21,11 +21,9 @@ public class Spieler {
         hand.add(k);
     }
 
-    public boolean istDieb(){
-        return true;
+    public ArrayList<Karte> getInventar() {
+        return inventar;
     }
-
-
 
     public ArrayList<Karte> getHand() {
 

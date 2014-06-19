@@ -9,6 +9,7 @@ public class Karte extends JPanel {
 
     public int wert;
     public Art art;
+    private Icon bild;
 
 
     public Art getArt() {
@@ -32,7 +33,8 @@ public class Karte extends JPanel {
         add(bilderNamenLabel, BorderLayout.NORTH);
 
 
-        JLabel bildLabel = new JLabel(a.getZufaelligesBild());
+        bild = a.getZufaelligesBild();
+        JLabel bildLabel = new JLabel(bild);
         add(bildLabel, BorderLayout.CENTER);
 
         JLabel staerkeLabel = new JLabel("Stärke: " + w);
@@ -47,5 +49,9 @@ public class Karte extends JPanel {
     @Override
     public String toString() {
         return art + " " + wert;
+    }
+
+    public Icon getBild() {
+        return bild;
     }
 }

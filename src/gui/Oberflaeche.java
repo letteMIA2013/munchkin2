@@ -12,13 +12,19 @@ public class Oberflaeche extends JFrame {
 
     public Oberflaeche(SpielInfo info) {
         setSize(900, 900);
-
+        setTitle("Munchkin");
         spielInfo = info;
 
-
+        //setBackground(new Color(222,200,145));
 
         Charakterblatt charakterBlatt = new Charakterblatt(this);
+
+        JLabel label = new JLabel();
+        label.setBackground(new Color(222,200,145));
+        label.setOpaque(true);
+
         add(charakterBlatt, BorderLayout.NORTH);
+        add(label, BorderLayout.CENTER);
 
         setVisible(true);
 

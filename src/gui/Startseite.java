@@ -1,4 +1,6 @@
 package gui;
+import gui.bilder.BildBauer;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -8,7 +10,7 @@ public class Startseite extends JFrame {
     private int Geheimcode;
     public Startseite(/*int pin*/final String spielerName1, final String spielerName2) {
         setSize(300,300);
-
+        setTitle("Munchkin");
         //if (pin != 111){
         //    JOptionPane.showMessageDialog(null,"Falsches Passwort!");
         //    return;
@@ -21,12 +23,16 @@ public class Startseite extends JFrame {
 
         MeinButton fortfahrButton = new MeinButton();
         fortfahrButton.setText("Fortfahren");
+        fortfahrButton.setBorder(BorderFactory.createLineBorder(new Color(139, 69, 19), 2));
         MeinButton startButton = new MeinButton();
         startButton.setText("Start");
+        startButton.setBorder(BorderFactory.createLineBorder(new Color(139, 69, 19), 2));
         MeinButton optionButton = new MeinButton();
         optionButton.setText("Optionen");
+        optionButton.setBorder(BorderFactory.createLineBorder(new Color(139, 69, 19), 2));
         MeinButton endeButton = new MeinButton();
         endeButton.setText("Ende");
+        endeButton.setBorder(BorderFactory.createLineBorder(new Color(139, 69, 19), 2));
 
         ActionListener listener = new ActionListener(){
             public void actionPerformed(ActionEvent huhu){
@@ -58,7 +64,7 @@ public class Startseite extends JFrame {
         panel.add(optionButton);
         panel.add(endeButton);
 
-        Bild bild1 = new Bild();
+        BildBauer bild1 = new BildBauer();
         ImageIcon icon1 = bild1.createImageIcon("Startseite.jpg");
         setIconImage(icon1.getImage());
         setIcon(icon1);

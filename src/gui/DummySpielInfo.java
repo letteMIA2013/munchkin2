@@ -1,8 +1,8 @@
 package gui;
 
-import logik.Kartenstapel;
-import logik.SpielInfo;
-import logik.Spieler;
+import logik.*;
+
+import java.util.ArrayList;
 
 /**
  * Created by Bundesmann on 11.06.14.
@@ -36,6 +36,21 @@ public class DummySpielInfo implements SpielInfo {
             @Override
             public int getLevel() {
                 return 4;
+            }
+
+            @Override
+            public ArrayList<Karte> getHand() {
+                ArrayList<Karte> kartes = new ArrayList<Karte>();
+                kartes.add(new Karte(5, Art.MONSTER));
+                return kartes;
+            }
+
+            @Override
+            public ArrayList<Karte> getInventar() {
+                ArrayList<Karte> kartes = new ArrayList<Karte>();
+                kartes.add(new Karte(2, Art.SCHATZ));
+                kartes.add(new Karte(3, Art.SCHATZ));
+                return kartes;
             }
         };
     }
