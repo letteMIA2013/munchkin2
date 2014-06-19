@@ -14,9 +14,17 @@ public class Namenbildschrim extends JFrame{
         setTitle("Name des Spielers");
         setLayout(new GridLayout(5,1,2,2));
         final JTextField textField = new JTextField();
+        textField.setForeground(new Color(139,69,19));
+        textField.setBackground(new Color(222, 184, 135));
+        textField.setBorder(BorderFactory.createLineBorder(new Color(139, 69, 19), 2));
         final JTextField textField1 = new JTextField();
+        textField1.setForeground(new Color(139,69,19));
+        textField1.setBackground(new Color(222, 184, 135));
+        textField1.setBorder(BorderFactory.createLineBorder(new Color(139, 69, 19), 2));
+
         MeinButton button = new MeinButton();
         button.setText("OK");
+        button.setBorder(BorderFactory.createLineBorder(new Color(139, 69, 19), 2));
         ActionListener listener = new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -25,9 +33,24 @@ public class Namenbildschrim extends JFrame{
             }
         };
         button.addActionListener(listener);
-        add(new JLabel("Spieler 1:"));
+        JLabel label = new JLabel();
+        label.setText("Spieler 1:");
+        label.setHorizontalAlignment(JLabel.CENTER);
+        label.setForeground(new Color(139,69,19));
+        label.setBackground(new Color(222, 184, 135));
+        label.setBorder(BorderFactory.createLineBorder(new Color(139, 69, 19), 2));
+        add(label);
         add(textField);
-        add(new JLabel("Spieler 2:"));
+        JLabel label1 = new JLabel();
+        label1.setText("Spieler 2:");
+        label1.setHorizontalAlignment(JLabel.CENTER);
+        label1.setForeground(new Color(139,69,19));
+        label1.setBackground(new Color(222, 184, 135));
+        label1.setBorder(BorderFactory.createLineBorder(new Color(139, 69, 19), 2));
+        label.setOpaque(true);
+        label1.setOpaque(true);
+        setBackground(new Color(222,200,145));
+        add(label1);
         add(textField1);
         add(button);
         setVisible(true);

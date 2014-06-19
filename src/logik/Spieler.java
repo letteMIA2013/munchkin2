@@ -21,7 +21,9 @@ public class Spieler {
         hand.add(k);
     }
 
-
+    public ArrayList<Karte> getInventar() {
+        return inventar;
+    }
 
     public ArrayList<Karte> getHand() {
 
