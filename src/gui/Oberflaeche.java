@@ -1,5 +1,6 @@
 package gui;
 
+import logik.Hand;
 import logik.SpielInfo;
 import logik.Spieler;
 
@@ -22,6 +23,8 @@ public class Oberflaeche extends JFrame {
         JLabel label = new JLabel();
         label.setBackground(new Color(222,200,145));
         label.setOpaque(true);
+
+
 
         add(charakterBlatt, BorderLayout.NORTH);
         add(label, BorderLayout.CENTER);

@@ -32,13 +32,13 @@ public class Charakterblatt extends JPanel {
         add(new MeinLabel(){
             @Override
             public String getText() {
-                return "Stärke: " + getAktuellerSpieler().getStaerke();
+                return "Stärke: " + oberflaeche.getSpielInfo().getAktuellerSpieler().getStaerke();
             }
         });
         add(new MeinLabel(){
             @Override
             public String getText() {
-                return "Lvl: " + getAktuellerSpieler().getLevel();
+                return "Lvl: " + oberflaeche.getSpielInfo().getAktuellerSpieler().getLevel();
             }
         });
 
@@ -82,10 +82,7 @@ public class Charakterblatt extends JPanel {
 
 
 
-    private Spieler getAktuellerSpieler(){
-        SpielInfo spielInfo = oberflaeche.getSpielInfo();
-        return spielInfo.istSpielerEinsDran()? spielInfo.getSpielerEins(): spielInfo.getSpielerZwei();
-    }
+
         //TODO auf dem Feld sind 10 Felder, wir wollten nur 5 große.
 
     private void erstelleFuenfInventarFelder(int startIndex) {
@@ -121,7 +118,7 @@ public class Charakterblatt extends JPanel {
 
         @Override
         public void paint(Graphics g) {
-            ArrayList<Karte> inventar = getAktuellerSpieler().getInventar();
+            ArrayList<Karte> inventar = oberflaeche.getSpielInfo().getAktuellerSpieler().getInventar();
             removeAll();
 
             if (inventar == null || inventar.size() <= index){

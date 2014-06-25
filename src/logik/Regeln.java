@@ -5,104 +5,96 @@ public class Regeln implements SpielInfo{
 
 
 
-    public Kartenstapel kartenstapel;
-    public Spieler spieler1;
-    public Spieler spieler2;
-    public Karte karte;
+    private Kartenstapel kartenstapel;
+    private Spieler spieler1;
+    private Spieler spieler2;
+    private Karte monsterKarte;
+
+    private boolean spielerEinsDran;
+
 
 
     public  Regeln(){
 
 
-        new Klasse();
+
 
             // kartenstapel erstellen
         Kartenstapel kartenstapel = new Kartenstapel();
 
         // beide spieler erstellen
 
-        Spieler spieler1 = new Spieler();
-        Spieler spieler2 = new Spieler();
+         spieler1 = new Spieler();
+         spieler2 = new Spieler();
 
         // karten ziehen und an spieler verteilen (hand)
 
-            for(int i = 0; i < 5; i++){
-
-
-
-                karte = kartenstapel.getObersteKarte();
-                spieler1.gibKarte(karte);
-
-            }
-
-
+        for(int i = 1; i <= 5; i++){
+                this.spieler2.gibKarte(kartenstapel.getObersteKarte());
+                this.spieler1.gibKarte(kartenstapel.getObersteKarte());
         }
+    }
 
 
 
     @Override
     public Spieler getSpielerEins() {
-        return null;
+        return spieler1;
     }
 
     @Override
     public Spieler getSpielerZwei() {
-        return null;
+        return spieler2;
     }
 
     @Override
     public boolean istSpielerEinsDran() {
-        return false;
+        return spielerEinsDran;
     }
 
-    public void tuerEintreten(){
+    @Override
+    public Spieler getAktuellerSpieler(){
+
+        return istSpielerEinsDran()? getSpielerEins(): getSpielerZwei();
+    }
+
+    public Karte tuerEintreten(){
 
     // TODO Türbutton, kartenstapel -> aufdeckfläche
 
 
-       /* MouseListener meinListener = new MouseAdapter(){
-                public void mousePressed(MouseEvent e){
-
-
-                   TODO aufdeckstapel
-                   aufdecklabel.setIcon(hier karten grafik rein);
-
-
-
-                }
-                JLabel aufdecklabel = (JLabel) e.getSource();
-                    icon = aufdecklabel.getIcon();
-                    aufdecklabel.setIcon(null);
-
-        */
-
-
-    }
-
-
-    public void aufAergerAusSein(){
-
-    // TODO wenn Raum leer -> möglichkeit Monster auszuspielen und selber zu bekämpfen
-
-    }
-
-
-    public void raumPluendern(){
-
-
-    // TODO Monster looten oder Schatzkarte
+        monsterKarte = kartenstapel.getObersteKarte();
+        return monsterKarte;
 
     }
 
     @Override
+    public Karte raumPluendern(){
+        return kartenstapel.getObersteKarte();
+    }
+
+
+    @Override
     public Kartenstapel getKartenstapel() {
-        return null;
-        //TODO!!!
+        return kartenstapel;
     }
 
     @Override
     public void wechselAktuellenSpieler() {
-    // TODO!!!
+        spielerEinsDran = !spielerEinsDran;
+    }
+
+    /**
+     * Diese Methode sollte aufgerufe werden, wenn der {@link logik.Spieler} einem Monmstr wglaufen will...
+     * @param zahl dieser Wert stellt den Wurf dar, den der Speielr zum wglaufen gemacht hat,.
+     * @return true, falls das weglaufen erforgreich ist, ansosnten false (Spielr verliert automatisch eine Stufe)
+     */
+    public boolean weglaufen(int zahl){
+        if (zahl < 5){
+            getAktuellerSpieler().setLevel(getAktuellerSpieler().getLevel() - 1);
+            return false;
+        }
+        return true;
     }
 }
 
