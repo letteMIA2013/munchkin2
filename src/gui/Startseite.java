@@ -8,9 +8,9 @@ import java.awt.event.ActionListener;
 
 public class Startseite extends JFrame {
     private int Geheimcode;
-    public Startseite(/*int pin*/final String spielerName1, final String spielerName2) {
+    public Startseite(/*int pin*/final String spielerName1,String spielerArt1, final String spielerName2, String spielerArt2) {
         setSize(300,300);
-        setTitle("Munchkin");
+        setTitle("Menü");
         //if (pin != 111){
         //    JOptionPane.showMessageDialog(null,"Falsches Passwort!");
         //    return;
@@ -21,15 +21,13 @@ public class Startseite extends JFrame {
         //setIconImage(icon.getImage());
 
 
-        MeinButton fortfahrButton = new MeinButton();
-        fortfahrButton.setText("Fortfahren");
-        fortfahrButton.setBorder(BorderFactory.createLineBorder(new Color(139, 69, 19), 2));
+
         MeinButton startButton = new MeinButton();
         startButton.setText("Start");
         startButton.setBorder(BorderFactory.createLineBorder(new Color(139, 69, 19), 2));
-        MeinButton optionButton = new MeinButton();
-        optionButton.setText("Optionen");
-        optionButton.setBorder(BorderFactory.createLineBorder(new Color(139, 69, 19), 2));
+        //MeinButton optionButton = new MeinButton();
+        //optionButton.setText("Optionen");
+        //optionButton.setBorder(BorderFactory.createLineBorder(new Color(139, 69, 19), 2));
         MeinButton endeButton = new MeinButton();
         endeButton.setText("Ende");
         endeButton.setBorder(BorderFactory.createLineBorder(new Color(139, 69, 19), 2));
@@ -55,13 +53,13 @@ public class Startseite extends JFrame {
         JPanel l = new JPanel();
 
 
-        panel.setLayout(new GridLayout(4, 1));
+        panel.setLayout(new GridLayout(3, 1));
         //setLayout(new BorderLayout());
 
 
-        panel.add(fortfahrButton);
+
         panel.add(startButton);
-        panel.add(optionButton);
+        //panel.add(optionButton);
         panel.add(endeButton);
 
         BildBauer bild1 = new BildBauer();
