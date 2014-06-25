@@ -2,25 +2,48 @@ package gui;
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
+import java.awt.event.*;
 
 /**
  * Created by Bundesmann on 12.06.14.
  */
 public class Namenbildschrim extends JFrame{
+
+    private final String DEFAULT_NAME = "- your name here";
+
     public Namenbildschrim() {
-        setSize(200,200);
-        setTitle("Name des Spielers");
-        setLayout(new GridLayout(5,1,2,2));
-        final JTextField textField = new JTextField();
+        setSize(300,300);
+        setTitle("Name und Charakter des Spielers");
+        setLayout(new GridLayout(7,1,2,2));
+        final JTextField textField = new JTextField(DEFAULT_NAME);
         textField.setForeground(new Color(139,69,19));
-        textField.setBackground(new Color(222, 184, 135));
+        textField.setBackground(new Color(222, 200, 160));
         textField.setBorder(BorderFactory.createLineBorder(new Color(139, 69, 19), 2));
-        final JTextField textField1 = new JTextField();
+        final JTextField textField1 = new JTextField(DEFAULT_NAME);
         textField1.setForeground(new Color(139,69,19));
-        textField1.setBackground(new Color(222, 184, 135));
+        textField1.setBackground(new Color(222, 200, 160));
         textField1.setBorder(BorderFactory.createLineBorder(new Color(139, 69, 19), 2));
+
+        textField.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                if (textField.getText().equals(DEFAULT_NAME)){
+                    textField.setText("");
+                }
+            }
+        });
+
+        textField1.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                if (textField1.getText().equals(DEFAULT_NAME)){
+                    textField1.setText("");
+                }
+            }
+        });
+
+        final JComboBox comboBox = new JComboBox(new String[]{"Krieger", "Dieb"});
+        final JComboBox comboBox1 = new JComboBox(new String[]{"Krieger", "Dieb"});
 
         MeinButton button = new MeinButton();
         button.setText("OK");
@@ -28,7 +51,7 @@ public class Namenbildschrim extends JFrame{
         ActionListener listener = new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                new Startseite(textField.getText(),textField1.getText());
+                new Startseite(textField.getText(),comboBox.getToolTipText(),textField1.getText(),comboBox1.getToolTipText());
                 setVisible(false);
             }
         };
@@ -41,6 +64,7 @@ public class Namenbildschrim extends JFrame{
         label.setBorder(BorderFactory.createLineBorder(new Color(139, 69, 19), 2));
         add(label);
         add(textField);
+        add(comboBox);
         JLabel label1 = new JLabel();
         label1.setText("Spieler 2:");
         label1.setHorizontalAlignment(JLabel.CENTER);
@@ -52,6 +76,7 @@ public class Namenbildschrim extends JFrame{
         setBackground(new Color(222,200,145));
         add(label1);
         add(textField1);
+        add(comboBox1);
         add(button);
         setVisible(true);
     }
