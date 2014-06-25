@@ -2,9 +2,9 @@ package logik;
 
         import java.util.ArrayList;
 
-/**
- * Created by e3_dittmer on 11.06.14.
- */
+
+
+
 public class Spieler {
 
     private int staerke, level;
@@ -25,9 +25,7 @@ public class Spieler {
         return inventar;
     }
 
-    public ArrayList<Karte> getHand() {
-
-
+    public ArrayList<Karte> getHand(ArrayList<Karte> hand) {
 
         return hand;
     }
@@ -47,4 +45,9 @@ public class Spieler {
     public int getLevel() {
         return level;
     }
+
+    public void setLevel(int level) {
+        this.level = level;
+    }
+
 }
