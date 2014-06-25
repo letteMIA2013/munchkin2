@@ -11,7 +11,7 @@ public enum Art {
 
 
     MONSTER("monster", new String[]{"Bekiffter-Golem-", "Freundschaftstrank-", "Käpt-Blubber-", "Netz-Troll-", "Schlafender-Troll-",
-    "Werschildkroete-","Zwerg-", "Halbling-"}),
+    "Werschildkroete-","Zwerg-", "Halbling-" , "Zauberer-"}),
 
     SCHATZ ("schatz", new String[]{"Abschlachtendes-Schwert-","Helm_der_Peripherensicht-","Stahlrüstung-", "Lederrüstung-", "Stiefel-","Schleimige_Rüstung-"});
 
