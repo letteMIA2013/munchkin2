@@ -3,6 +3,7 @@ package logik;
 import java.lang.System;
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Random;
 
 public class Kartenstapel {
 
@@ -20,7 +21,10 @@ public class Kartenstapel {
 
 
             Art typDerKarte = i < 20 ? Art.MONSTER : Art.SCHATZ;
-            Karte karte = new Karte(i, typDerKarte);
+            boolean istMonster = typDerKarte == Art.MONSTER;
+            int wert = istMonster ? new Random().nextInt(10) + 1: 0;
+            Karte karte = new Karte(wert, typDerKarte);
+            karte.getWert();
             stapel.add(karte);
 
 

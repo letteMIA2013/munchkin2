@@ -12,14 +12,17 @@ public class Karte extends JPanel {
     private Icon bild;
 
 
-    public Art getArt() {
-        return art;
-    }
-
+    /**
+     * Diese Methode bestimmt den Stärkewert aller Karten
+     * @return int wert für eine Random Zahl
+     */
     public int getWert() {
         return wert;
     }
 
+    public Art getArt() {
+        return art;
+    }
 
 
     public Karte( int w, Art a){
