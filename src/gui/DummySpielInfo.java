@@ -38,18 +38,18 @@ public class DummySpielInfo implements SpielInfo {
                 return 4;
             }
 
-            @Override
+           /* @Override
             public ArrayList<Karte> getHand() {
                 ArrayList<Karte> kartes = new ArrayList<Karte>();
                 kartes.add(new Karte(5, Art.MONSTER));
                 return kartes;
-            }
+            }*/
 
             @Override
             public ArrayList<Karte> getInventar() {
                 ArrayList<Karte> kartes = new ArrayList<Karte>();
-                kartes.add(new Karte(2, Art.SCHATZ));
-                kartes.add(new Karte(3, Art.SCHATZ));
+                kartes.add(new Karte(0, Art.SCHATZ));
+                kartes.add(new Karte(0, Art.SCHATZ));
                 return kartes;
             }
         };
@@ -79,4 +79,14 @@ public class DummySpielInfo implements SpielInfo {
     public void wechselAktuellenSpieler() {
         istSp1Dran = !istSp1Dran;
     }
+    public Spieler getAktuellerSpieler(){
+        return null;
+    }
+
+
+
+    public Karte raumPluendern(){
+        return  null;
+    }
+
 }

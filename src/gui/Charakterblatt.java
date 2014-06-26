@@ -70,7 +70,7 @@ public class Charakterblatt extends JPanel {
             @Override
             public void actionPerformed(ActionEvent e) {
                 oberflaeche.setVisible(false);
-                Startseite startseite = new Startseite(null, null);
+               // Startseite startseite = new Startseite(null, null);
             }
         };
         add(menueButton);
