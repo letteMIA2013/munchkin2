@@ -1,13 +1,17 @@
 package logik;
 
-import java.lang.String;public class Start {
+import gui.Namenbildschrim;
+import gui.Startseite;
+
+import java.lang.String;
+
+
+public class Start {
 
     public static void main(String[] args){
-
-
-          new Kartenstapel();
-          new Klasse();
-
+    
+    //new Regeln();    
+    new Namenbildschrim();
 
 
 
