@@ -26,9 +26,14 @@ public class Charakterblatt extends JPanel {
 
         setLayout(new GridLayout(2, 8, 3, 3));
 
-        erstelleFuenfInventarFelder(0);
+        erstelleFuenfInventarFelder();
 
-        add(new JLabel());
+        add(new JLabel(){
+            @Override
+            public Icon getIcon() {
+                return oberflaeche.getSpielInfo().getAktuellerSpieler().getKlasse().getImageIcon();
+            }
+        });
         add(new MeinLabel(){
             @Override
             public String getText() {
@@ -42,7 +47,11 @@ public class Charakterblatt extends JPanel {
             }
         });
 
-        erstelleFuenfInventarFelder(5);
+        add(new JLabel());
+        add(new JLabel());
+        add(new JLabel());
+        add(new JLabel());
+        add(new JLabel());
 
         add(new JLabel());
         JButton endeButton =new JButton("Ende des Zuges");
@@ -70,7 +79,7 @@ public class Charakterblatt extends JPanel {
             @Override
             public void actionPerformed(ActionEvent e) {
                 oberflaeche.setVisible(false);
-                Startseite startseite = new Startseite(null, null);
+                Startseite startseite = new Startseite(null, null, null, null);
             }
         };
         add(menueButton);
@@ -83,9 +92,10 @@ public class Charakterblatt extends JPanel {
 
 
 
-        //TODO auf dem Feld sind 10 Felder, wir wollten nur 5 große.
 
-    private void erstelleFuenfInventarFelder(int startIndex) {
+
+    private void erstelleFuenfInventarFelder() {
+        int startIndex = 0;
         for(int i=0; i < 5; i++){
             InventarFeld feld = new InventarFeld(startIndex);
             add(feld);

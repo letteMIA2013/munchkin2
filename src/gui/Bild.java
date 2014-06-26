@@ -1,4 +1,6 @@
 package gui;import javax.swing.*;
+// Created by Bundesmann on 05.06.14.
+
 
 public class Bild {
     public ImageIcon createImageIcon(String pfad) {

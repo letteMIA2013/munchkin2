@@ -1,5 +1,7 @@
 package gui;
 
+import logik.Klasse;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
@@ -42,8 +44,8 @@ public class Namenbildschrim extends JFrame{
             }
         });
 
-        final JComboBox comboBox = new JComboBox(new String[]{"Krieger", "Dieb"});
-        final JComboBox comboBox1 = new JComboBox(new String[]{"Krieger", "Dieb"});
+        final JComboBox comboBox = new JComboBox(Klasse.values());
+        final JComboBox comboBox1 = new JComboBox(Klasse.values());
 
         MeinButton button = new MeinButton();
         button.setText("OK");
@@ -51,7 +53,7 @@ public class Namenbildschrim extends JFrame{
         ActionListener listener = new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                new Startseite(textField.getText(),comboBox.getToolTipText(),textField1.getText(),comboBox1.getToolTipText());
+                new Startseite(textField.getText(),(Klasse)comboBox.getSelectedItem(), textField1.getText(), (Klasse)comboBox1.getSelectedItem());
                 setVisible(false);
             }
         };
@@ -59,7 +61,7 @@ public class Namenbildschrim extends JFrame{
         JLabel label = new JLabel();
         label.setText("Spieler 1:");
         label.setHorizontalAlignment(JLabel.CENTER);
-        label.setForeground(new Color(139,69,19));
+        label.setForeground(new Color(139, 69, 19));
         label.setBackground(new Color(222, 184, 135));
         label.setBorder(BorderFactory.createLineBorder(new Color(139, 69, 19), 2));
         add(label);
@@ -68,12 +70,12 @@ public class Namenbildschrim extends JFrame{
         JLabel label1 = new JLabel();
         label1.setText("Spieler 2:");
         label1.setHorizontalAlignment(JLabel.CENTER);
-        label1.setForeground(new Color(139,69,19));
+        label1.setForeground(new Color(139, 69, 19));
         label1.setBackground(new Color(222, 184, 135));
         label1.setBorder(BorderFactory.createLineBorder(new Color(139, 69, 19), 2));
         label.setOpaque(true);
         label1.setOpaque(true);
-        setBackground(new Color(222,200,145));
+        setBackground(new Color(222, 200, 145));
         add(label1);
         add(textField1);
         add(comboBox1);

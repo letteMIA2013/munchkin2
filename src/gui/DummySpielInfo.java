@@ -13,9 +13,9 @@ public class DummySpielInfo implements SpielInfo {
     private final Spieler sp2;
     private boolean istSp1Dran;
 
-    public DummySpielInfo(String spielerName1, String spielerName2) {
+    public DummySpielInfo(String spielerName1, String spielerKlasse1, String spielerName2, String spielerKlasse2) {
 
-        sp1 = new Spieler(spielerName1){
+        sp1 = new Spieler(spielerName1, null){
             @Override
             public int getStaerke() {
                 return 6;
@@ -27,7 +27,7 @@ public class DummySpielInfo implements SpielInfo {
             }
         };
 
-        sp2 = new Spieler(spielerName2){
+        sp2 = new Spieler(spielerName2, null){
             @Override
             public int getStaerke() {
                 return 10;
@@ -38,12 +38,7 @@ public class DummySpielInfo implements SpielInfo {
                 return 4;
             }
 
-            @Override
-            public ArrayList<Karte> getHand() {
-                ArrayList<Karte> kartes = new ArrayList<Karte>();
-                kartes.add(new Karte(5, Art.MONSTER));
-                return kartes;
-            }
+
 
             @Override
             public ArrayList<Karte> getInventar() {
@@ -70,6 +65,8 @@ public class DummySpielInfo implements SpielInfo {
         return istSp1Dran;
     }
 
+
+
     @Override
     public Kartenstapel getKartenstapel() {
         return null;
@@ -78,5 +75,15 @@ public class DummySpielInfo implements SpielInfo {
     @Override
     public void wechselAktuellenSpieler() {
         istSp1Dran = !istSp1Dran;
+    }
+
+    @Override
+    public Spieler getAktuellerSpieler() {
+        return null;
+    }
+
+    @Override
+    public Karte raumPluendern() {
+        return null;
     }
 }

@@ -1,32 +1,27 @@
 package logik;
 
+import gui.bilder.BildBauer;
+
 import javax.swing.*;
 import java.awt.*;
 
-public class Klasse {
+/**
+ * // Created by Bundesmann on 05.06.14.
 
+ */
+public enum Klasse {
 
-    public Klasse() {
+    Dieb ("klasse/Dieb.png"),
+    Krieger ("klasse/Krieger.png");
+    private final ImageIcon imageIcon;
 
-        JFrame frame = new JFrame();
-        frame.setSize(400, 400);
-        JPanel klasse = new JPanel(new BorderLayout());
-        JButton krieger = new JButton("krieger");
-        JButton dieb = new JButton("dieb");
+    Klasse(String bildname) {
 
-
-        frame.add(klasse);
-        klasse.add(krieger, BorderLayout.WEST);
-        klasse.add(dieb, BorderLayout.EAST);
-
-        frame.setVisible(true);
-
-
+        BildBauer bildBauer = new BildBauer();
+        imageIcon = bildBauer.createImageIcon(bildname);
     }
 
-    public boolean istDieb(){
-        return true;
+    public ImageIcon getImageIcon() {
+        return imageIcon;
     }
-
-
 }

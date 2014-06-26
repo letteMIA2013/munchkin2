@@ -2,6 +2,8 @@ package gui;import javax.swing.*;
 import java.awt.*;
 public class MeinLabel extends JLabel{
 
+    // Created by Bundesmann on 05.06.14.
+
     public MeinLabel(){
         setBackground (new Color(222,184,135));
         setOpaque(true);

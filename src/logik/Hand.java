@@ -53,24 +53,7 @@ public class Hand extends JPanel {
 
         }
 
-       /* public boolean istSpielerEinsDran(boolean b){
 
-            if(b == true) {
-                return true;
-            }
-            else{
-                return false;
-            }
-
-
-        }
-
-
-        public boolean spielerZwei(){
-
-            return true;
-
-    }*/
 
 
 

@@ -14,7 +14,7 @@ public class Regeln implements SpielInfo{
 
 
 
-    public  Regeln(){
+    public  Regeln(String spielerName1, Klasse spielerKlasse1, String spielerName2, Klasse spielerKlasse2){
 
 
 
@@ -24,8 +24,8 @@ public class Regeln implements SpielInfo{
 
         // beide spieler erstellen
 
-         spieler1 = new Spieler();
-         spieler2 = new Spieler();
+         spieler1 = new Spieler(spielerName1, spielerKlasse1);
+         spieler2 = new Spieler(spielerName2, spielerKlasse2);
 
         // karten ziehen und an spieler verteilen (hand)
 

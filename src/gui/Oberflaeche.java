@@ -7,6 +7,8 @@ import logik.Spieler;
 import javax.swing.*;
 import java.awt.*;
 
+// Created by Bundesmann on 05.06.14.
+
 public class Oberflaeche extends JFrame {
 
     private final SpielInfo spielInfo;
@@ -39,6 +41,6 @@ public class Oberflaeche extends JFrame {
 
     @Override
     public String getTitle() {
-        return spielInfo.istSpielerEinsDran()? spielInfo.getSpielerEins().getName(): spielInfo.getSpielerZwei().getName();
+        return spielInfo.getAktuellerSpieler().getName() + ", Klasse:  " +  spielInfo.getAktuellerSpieler().getKlasse();
     }
 }

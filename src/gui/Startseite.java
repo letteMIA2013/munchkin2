@@ -1,14 +1,18 @@
 package gui;
 import gui.bilder.BildBauer;
+import logik.Klasse;
+import logik.Regeln;
 
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+// Created by Bundesmann on 05.06.14.
+
 public class Startseite extends JFrame {
     private int Geheimcode;
-    public Startseite(/*int pin*/final String spielerName1,String spielerArt1, final String spielerName2, String spielerArt2) {
+    public Startseite(/*int pin*/final String spielerName1,final Klasse spielerKlasse1, final String spielerName2,final Klasse spielerKlasse2) {
         setSize(300,300);
         setTitle("Menü");
         //if (pin != 111){
@@ -35,7 +39,7 @@ public class Startseite extends JFrame {
         ActionListener listener = new ActionListener(){
             public void actionPerformed(ActionEvent huhu){
                 setVisible(false);
-                Oberflaeche oberflaeche = new Oberflaeche(new DummySpielInfo(spielerName1, spielerName2));
+                Oberflaeche oberflaeche = new Oberflaeche(new Regeln(spielerName1, spielerKlasse1, spielerName2, spielerKlasse2));
 
             }
         };
@@ -53,7 +57,7 @@ public class Startseite extends JFrame {
         JPanel l = new JPanel();
 
 
-        panel.setLayout(new GridLayout(3, 1));
+        panel.setLayout(new GridLayout(2, 1));
         //setLayout(new BorderLayout());
 
 

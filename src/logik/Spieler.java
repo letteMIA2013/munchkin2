@@ -3,18 +3,24 @@ package logik;
         import java.util.ArrayList;
 
 
-
-
+/**
+ * Created by Steven, Luca und Raphael
+ *
+ */
 public class Spieler {
 
     private int staerke, level;
     private  String name;
+    private Klasse klasse;
     ArrayList<Karte> inventar, hand;
 
-    public Spieler() {
 
+
+    public Spieler(String name, Klasse klasse) {
         hand = new ArrayList<Karte>();
         inventar = new ArrayList<Karte>();
+        this.name = name;
+        this.klasse = klasse;
     }
 
     public void gibKarte(Karte k){
@@ -30,9 +36,7 @@ public class Spieler {
         return hand;
     }
 
-    public Spieler(String name) {
-        this.name = name;
-    }
+
 
     public int getStaerke() {
         return staerke;
@@ -50,4 +54,7 @@ public class Spieler {
         this.level = level;
     }
 
+    public Klasse getKlasse() {
+        return klasse;
+    }
 }
