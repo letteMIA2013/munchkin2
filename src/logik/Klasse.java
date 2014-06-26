@@ -11,8 +11,8 @@ public class Klasse {
         JFrame frame = new JFrame();
         frame.setSize(400, 400);
         JPanel klasse = new JPanel(new BorderLayout());
-        JButton krieger = new JButton("krieger");
-        JButton dieb = new JButton("dieb");
+        JLabel krieger = new JLabel("krieger");
+        JLabel dieb = new JLabel("dieb");
 
 
         frame.add(klasse);

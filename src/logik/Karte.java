@@ -2,6 +2,7 @@ package logik;
 
 import javax.swing.*;
 import java.awt.*;
+import java.lang.Override;import java.lang.String;
 
 public class Karte extends JPanel {
 
@@ -16,29 +17,30 @@ public class Karte extends JPanel {
      * @return int wert für eine Random Zahl
      */
     public int getWert() {
-
         return wert;
-
     }
 
     public Art getArt() {
         return art;
     }
 
+
     public Karte( int w, Art a){
 
-
-        wert = w;
+        //TODO: getter methoden hierfür:
+        this.wert = w;
         this.art = a;
 
 
 //        setLayout(new BorderLayout());
         JLabel bilderNamenLabel = new JLabel(a.getZufaelligerName() );
         add(bilderNamenLabel, BorderLayout.NORTH);
+        //TODO: jlabel fürs bild erzeugen und in die mitte hinzufügen
 
         bild = a.getZufaelligesBild();
         JLabel bildLabel = new JLabel(bild);
         add(bildLabel, BorderLayout.CENTER);
+        //TODO: jlabel für namen erzeugen und oben hinzufügen
 
         JLabel staerkeLabel = new JLabel("Stärke: " + w);
         add(staerkeLabel, BorderLayout.SOUTH);
